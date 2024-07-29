@@ -48,7 +48,7 @@ export const signUp = ({
   try {
     console.log(name);
     const response = await axios.post(
-      `http://localhost:5000/Admin/createAdmin`,
+      `https://epic-explorer-backend.vercel.app/Admin/createAdmin`,
       { name, email, password, confirmPassword, googleSign },
       {
         headers: {

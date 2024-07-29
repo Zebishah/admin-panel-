@@ -7,11 +7,14 @@ const AllRooms = () => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/Admin/rooms", {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await axios.get(
+          "https://epic-explorer-backend.vercel.app/Admin/rooms",
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
         setRooms(response.data.rooms);
       } catch (error) {
         console.error("Error fetching rooms:", error);

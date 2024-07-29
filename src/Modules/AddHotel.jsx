@@ -38,7 +38,7 @@ const AddHotel = () => {
     // Handle form submission, e.g., send formData to the server
     try {
       const response = await axios.post(
-        `http://localhost:5000/Hotel/addHotel`,
+        `https://epic-explorer-backend.vercel.app/Hotel/addHotel`,
         {
           name: formData.name,
           prices: formData.prices,

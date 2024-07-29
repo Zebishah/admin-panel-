@@ -40,7 +40,7 @@ const AddTransport = () => {
     // Handle form submission, e.g., send formData to the server
     try {
       const response = await axios.post(
-        `http://localhost:5000/Transport/addTransport`,
+        `https://epic-explorer-backend.vercel.app/Transport/addTransport`,
         {
           carName: formData.carName,
           prices: formData.prices,

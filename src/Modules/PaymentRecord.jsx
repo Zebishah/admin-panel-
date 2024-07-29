@@ -2,14 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const PaymentRecord = () => {
-    const [payments, setPayments] = useState([]);
-
+  const [payments, setPayments] = useState([]);
 
   useEffect(() => {
-   const fetchTourPayments = async () => {
+    const fetchTourPayments = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/Admin/TourPayments",
+          "https://epic-explorer-backend.vercel.app/Admin/TourPayments",
           // If you need to send any data in the request body, add it here
           // Example: { someData: 'value' }
           {
@@ -25,9 +24,8 @@ const PaymentRecord = () => {
       }
     };
     fetchTourPayments();
-  }, []); 
- 
- 
+  }, []);
+
   return (
     <div className="flex flex-col w-full gap-y-10">
       <h1 className="mx-auto text-5xl text-yellows font-joining">
@@ -68,17 +66,27 @@ const PaymentRecord = () => {
               <tr
                 key={index}
                 className={`${
-                  index % 2 === 0 ? 'even:bg-light-black' : 'odd:bg-fade-black'
+                  index % 2 === 0 ? "even:bg-light-black" : "odd:bg-fade-black"
                 } border-b dark:border-gray-700 font-radios`}
               >
                 <td className="px-2 py-4 text-xs font-medium text-white 2xl:px-6 whitespace-nowrap font-radios">
                   {payment?.booker}
                 </td>
-                <td className="px-2 py-4 text-xs 2xl:px-6">{payment?.booking}</td>
-                <td className="text-[9px] px-2 2xl:px-6 py-4">{payment?.senderAccountId}</td>
-                <td className="px-2 py-4 text-xs 2xl:px-6">{payment?.deliveryCharges}</td>
-                <td className="px-2 py-4 text-xs 2xl:px-6">{payment?.totalPrice}</td>
-                <td className="px-2 py-4 text-xs 2xl:px-6">{payment?.tourName}</td>
+                <td className="px-2 py-4 text-xs 2xl:px-6">
+                  {payment?.booking}
+                </td>
+                <td className="text-[9px] px-2 2xl:px-6 py-4">
+                  {payment?.senderAccountId}
+                </td>
+                <td className="px-2 py-4 text-xs 2xl:px-6">
+                  {payment?.deliveryCharges}
+                </td>
+                <td className="px-2 py-4 text-xs 2xl:px-6">
+                  {payment?.totalPrice}
+                </td>
+                <td className="px-2 py-4 text-xs 2xl:px-6">
+                  {payment?.tourName}
+                </td>
                 {/* <td className="px-2 py-4 text-xs 2xl:px-6">{payment.paymentDate}</td>
                 <td className="px-2 py-4 text-xs 2xl:px-6">
                   <a href="#" className="font-medium text-red-600 hover:underline">

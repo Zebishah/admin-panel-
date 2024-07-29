@@ -8,11 +8,14 @@ const AllTours = () => {
   useEffect(() => {
     const fetchTours = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/Admin/tours", {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await axios.get(
+          "https://epic-explorer-backend.vercel.app/Admin/tours",
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
         setTours(response.data.tours);
       } catch (error) {
         console.error("Error fetching notifications:", error);

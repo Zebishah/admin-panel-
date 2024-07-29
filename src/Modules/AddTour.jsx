@@ -45,7 +45,7 @@ const AddTour = () => {
     // Handle form submission, e.g., send formData to the server
     try {
       const response = await axios.post(
-        `http://localhost:5000/Tour/addTour`,
+        `https://epic-explorer-backend.vercel.app/Tour/addTour`,
         {
           name: formData.name,
           price: formData.price,

@@ -43,7 +43,7 @@ const Dashboard = () => {
     const fetchDashboardCounts = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:5000/Admin/dashboard-counts",
+          "https://epic-explorer-backend.vercel.app/Admin/dashboard-counts",
           // If you need to send any data in the request body, add it here
           // Example: { someData: 'value' }
           {
@@ -91,7 +91,7 @@ const Dashboard = () => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/Admin/users",
+          "https://epic-explorer-backend.vercel.app/Admin/users",
           // If you need to send any data in the request body, add it here
           // Example: { someData: 'value' }
           {
@@ -111,143 +111,143 @@ const Dashboard = () => {
   }, []); // Empty dependency array means this effect runs once after initial render
 
   return (
-    <div className="flex flex-col gap-y-10 justify-start items-start w-full p-4">
-      <h1 className="text-yellows text-lg lg:text-4xl font-joining bg-light-black bg-opacity-60 p-4 rounded-lg shadow-lg shadow-yellows">
+    <div className="flex flex-col items-start justify-start w-full p-4 gap-y-10">
+      <h1 className="p-4 text-lg rounded-lg shadow-lg text-yellows lg:text-4xl font-joining bg-light-black bg-opacity-60 shadow-yellows">
         Business Stats
       </h1>
-      <div className="flex flex-row gap-x-8 2xl:gap-x-32 gap-y-8 flex-wrap justify-start items-start w-full">
+      <div className="flex flex-row flex-wrap items-start justify-start w-full gap-x-8 2xl:gap-x-32 gap-y-8">
         <div className="flex gap-x-8 justify-center items-center bg-fade-black p-6 rounded-xl shadow-lg shadow-black w-auto 2xl:w-[18%]">
-          <FaTruckPlane className="text-yellows text-lg" size={50} />
-          <div className="flex gap-y-1 flex-col justify-center items-center">
-            <h1 className="text-yellows text-3xl font-extrabold font-radios">
+          <FaTruckPlane className="text-lg text-yellows" size={50} />
+          <div className="flex flex-col items-center justify-center gap-y-1">
+            <h1 className="text-3xl font-extrabold text-yellows font-radios">
               {counts.toursBooked}
             </h1>
-            <h3 className="text-yellows text-lg font-radios">Tours Booked</h3>
+            <h3 className="text-lg text-yellows font-radios">Tours Booked</h3>
           </div>
         </div>
 
         <div className="flex gap-x-4 justify-center items-center bg-fade-black p-6 rounded-xl shadow-lg shadow-black w-auto 2xl:w-[18%]">
-          <MdEmojiTransportation className="text-yellows text-lg" size={50} />
-          <div className="flex flex-col gap-y-2 justify-center items-center">
-            <h1 className="text-yellows text-3xl font-extrabold font-radios">
+          <MdEmojiTransportation className="text-lg text-yellows" size={50} />
+          <div className="flex flex-col items-center justify-center gap-y-2">
+            <h1 className="text-3xl font-extrabold text-yellows font-radios">
               {counts.transportBooked}
             </h1>
-            <h3 className=" text-yellows text-lg font-radios">
+            <h3 className="text-lg  text-yellows font-radios">
               Transport Booked
             </h3>
           </div>
         </div>
 
         <div className="flex gap-x-4 justify-center items-center bg-fade-black p-6 rounded-xl shadow-lg shadow-black w-auto 2xl:w-[18%]">
-          <FaHotel className="text-yellows text-lg" size={50} />
-          <div className="flex flex-col gap-y-2 justify-center items-center">
-            <h1 className="text-yellows text-3xl font-extrabold font-radios">
+          <FaHotel className="text-lg text-yellows" size={50} />
+          <div className="flex flex-col items-center justify-center gap-y-2">
+            <h1 className="text-3xl font-extrabold text-yellows font-radios">
               {counts.hotelBooked}
             </h1>
-            <h3 className=" text-yellows text-lg font-radios">Hotel Booked</h3>
+            <h3 className="text-lg  text-yellows font-radios">Hotel Booked</h3>
           </div>
         </div>
 
         <div className="flex gap-x-4 justify-center items-center bg-fade-black p-6 rounded-xl shadow-lg shadow-black w-auto 2xl:w-[18%]">
-          <MdPayments className="text-yellows text-lg" size={50} />
-          <div className="flex flex-col gap-y-2 justify-center items-center">
-            <h1 className="text-yellows text-3xl font-extrabold font-radios">
+          <MdPayments className="text-lg text-yellows" size={50} />
+          <div className="flex flex-col items-center justify-center gap-y-2">
+            <h1 className="text-3xl font-extrabold text-yellows font-radios">
               {counts.transactions}
             </h1>
-            <h3 className=" text-yellows text-lg font-radios">Transactions</h3>
+            <h3 className="text-lg  text-yellows font-radios">Transactions</h3>
           </div>
         </div>
 
         <div className="flex gap-x-4 justify-center items-center bg-fade-black p-6 rounded-xl shadow-lg shadow-black w-auto 2xl:w-[18%]">
-          <ImUsers className="text-yellows text-lg" size={50} />
-          <div className="flex flex-col gap-y-2 justify-center items-center">
-            <h1 className="text-yellows text-3xl font-extrabold font-radios">
+          <ImUsers className="text-lg text-yellows" size={50} />
+          <div className="flex flex-col items-center justify-center gap-y-2">
+            <h1 className="text-3xl font-extrabold text-yellows font-radios">
               {counts.totalUsers}
             </h1>
-            <h3 className=" text-yellows text-lg font-radios">Total Users</h3>
+            <h3 className="text-lg  text-yellows font-radios">Total Users</h3>
           </div>
         </div>
 
         <div className="flex gap-x-4 justify-center items-center bg-fade-black p-6 rounded-xl shadow-lg shadow-black w-auto 2xl:w-[18%]">
-          <SiGooglemessages className="text-yellows text-lg" size={50} />
-          <div className="flex flex-col gap-y-2 justify-center items-center">
-            <h1 className="text-yellows text-3xl font-extrabold font-radios">
+          <SiGooglemessages className="text-lg text-yellows" size={50} />
+          <div className="flex flex-col items-center justify-center gap-y-2">
+            <h1 className="text-3xl font-extrabold text-yellows font-radios">
               {counts.totalReviews}
             </h1>
-            <h3 className=" text-yellows text-lg font-radios">Total Reviews</h3>
+            <h3 className="text-lg  text-yellows font-radios">Total Reviews</h3>
           </div>
         </div>
 
         <div className="flex gap-x-4 justify-center items-center bg-fade-black p-6 rounded-xl shadow-lg shadow-black w-auto 2xl:w-[18%]">
-          <PiAirplaneTiltFill className="text-yellows text-lg" size={50} />
-          <div className="flex flex-col gap-y-2 justify-center items-center">
-            <h1 className="text-yellows text-3xl font-extrabold font-radios">
+          <PiAirplaneTiltFill className="text-lg text-yellows" size={50} />
+          <div className="flex flex-col items-center justify-center gap-y-2">
+            <h1 className="text-3xl font-extrabold text-yellows font-radios">
               {counts.totalTours}
             </h1>
-            <h3 className=" text-yellows text-lg font-radios">Total Tours</h3>
+            <h3 className="text-lg  text-yellows font-radios">Total Tours</h3>
           </div>
         </div>
 
         <div className="flex gap-x-4 justify-center items-center bg-fade-black p-6 rounded-xl shadow-lg shadow-black w-auto 2xl:w-[18%]">
-          <FaCar className="text-yellows text-lg" size={50} />
-          <div className="flex flex-col gap-y-2 justify-center items-center">
-            <h1 className="text-yellows text-3xl font-extrabold font-radios">
+          <FaCar className="text-lg text-yellows" size={50} />
+          <div className="flex flex-col items-center justify-center gap-y-2">
+            <h1 className="text-3xl font-extrabold text-yellows font-radios">
               {counts.totalTransport}
             </h1>
-            <h3 className=" text-yellows text-lg font-radios">
+            <h3 className="text-lg  text-yellows font-radios">
               Total Transport
             </h3>
           </div>
         </div>
 
         <div className="flex gap-x-4 justify-center items-center bg-fade-black p-6 rounded-xl shadow-lg shadow-black w-auto 2xl:w-[18%]">
-          <RiHotelFill className="text-yellows text-lg" size={50} />
-          <div className="flex flex-col gap-y-2 justify-center items-center">
-            <h1 className="text-yellows text-3xl font-extrabold font-radios">
+          <RiHotelFill className="text-lg text-yellows" size={50} />
+          <div className="flex flex-col items-center justify-center gap-y-2">
+            <h1 className="text-3xl font-extrabold text-yellows font-radios">
               {counts.totalHotels}
             </h1>
-            <h3 className=" text-yellows text-lg font-radios">Total Hotels</h3>
+            <h3 className="text-lg  text-yellows font-radios">Total Hotels</h3>
           </div>
         </div>
 
         <div className="flex gap-x-4 justify-center items-center bg-fade-black p-6 rounded-xl shadow-lg shadow-black w-auto 2xl:w-[18%]">
-          <FaBed className="text-yellows text-lg" size={50} />
-          <div className="flex flex-col gap-y-2 justify-center items-center">
-            <h1 className="text-yellows text-3xl font-extrabold font-radios">
+          <FaBed className="text-lg text-yellows" size={50} />
+          <div className="flex flex-col items-center justify-center gap-y-2">
+            <h1 className="text-3xl font-extrabold text-yellows font-radios">
               {counts.totalRooms}
             </h1>
-            <h3 className=" text-yellows text-lg font-radios">Total Rooms</h3>
+            <h3 className="text-lg  text-yellows font-radios">Total Rooms</h3>
           </div>
         </div>
 
         <div className="flex gap-x-4 justify-center items-center bg-fade-black p-6 rounded-xl shadow-lg shadow-black w-auto 2xl:w-[18%]">
-          <FaPeopleGroup className="text-yellows text-lg" size={50} />
-          <div className="flex flex-col gap-y-2 justify-center items-center">
-            <h1 className="text-yellows text-3xl font-extrabold font-radios">
+          <FaPeopleGroup className="text-lg text-yellows" size={50} />
+          <div className="flex flex-col items-center justify-center gap-y-2">
+            <h1 className="text-3xl font-extrabold text-yellows font-radios">
               {counts.toursCustomers}
             </h1>
-            <h3 className=" text-yellows text-lg font-radios">
+            <h3 className="text-lg  text-yellows font-radios">
               Tours Customers
             </h3>
           </div>
         </div>
 
         <div className="flex gap-x-4 justify-center items-center bg-fade-black p-6 rounded-xl shadow-lg shadow-black w-auto 2xl:w-[18%]">
-          <FaPeopleGroup className="text-yellows text-lg" size={50} />
-          <div className="flex flex-col gap-y-2 justify-center items-center">
-            <h1 className="text-yellows text-3xl font-extrabold font-radios">
+          <FaPeopleGroup className="text-lg text-yellows" size={50} />
+          <div className="flex flex-col items-center justify-center gap-y-2">
+            <h1 className="text-3xl font-extrabold text-yellows font-radios">
               {counts.toursCustomers}
             </h1>
-            <h3 className=" text-yellows text-lg font-radios">
+            <h3 className="text-lg  text-yellows font-radios">
               Tours Customers
             </h3>
           </div>
         </div>
       </div>
-      {/* <h1 className="text-yellows text-lg lg:text-4xl font-joining bg-light-black bg-opacity-60 p-4 rounded-lg shadow-lg shadow-yellows">
+      {/* <h1 className="p-4 text-lg rounded-lg shadow-lg text-yellows lg:text-4xl font-joining bg-light-black bg-opacity-60 shadow-yellows">
         Growth Rate This months
       </h1>
-      <div className="flex gap-x-20 w-full justify-center">
+      <div className="flex justify-center w-full gap-x-20">
         <div className={`flex flex-col mt-5 w-[45%] bg-fade-black p-4 rounded-lg shadow-lg shadow-black`}>
           <div className="flex justify-between">
             <div className="mb-1 text-base font-medium dark:text-white">
@@ -258,7 +258,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="w-full bg-gray-200 rounded-full h-5 mb-4 dark:bg-gray-700">
+          <div className="w-full h-5 mb-4 bg-gray-200 rounded-full dark:bg-gray-700">
             <div className={`bg-gray-600 h-5 rounded-full dark:bg-gray-300 w-[${percentages.toursBookedPercentage}%]`}></div>
           </div>
           <div className="flex justify-between">
@@ -270,7 +270,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="w-full bg-gray-200 rounded-full h-5 mb-4 dark:bg-gray-700">
+          <div className="w-full h-5 mb-4 bg-gray-200 rounded-full dark:bg-gray-700">
             <div className={`bg-blue-600 h-5 rounded-full w-[${percentages.hotelBookedPercentage}%]`}></div>
           </div>
 
@@ -282,7 +282,7 @@ const Dashboard = () => {
               {percentages.transportBookedPercentage}%
             </div>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-5 mb-4 dark:bg-gray-700">
+          <div className="w-full h-5 mb-4 bg-gray-200 rounded-full dark:bg-gray-700">
             <div className={`bg-red-600 h-5 rounded-full dark:bg-red-500 w-[${percentages.transportBookedPercentage}%]`}></div>
           </div>
 
@@ -294,7 +294,7 @@ const Dashboard = () => {
               {percentages.tourPercentage}%
             </div>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-5 mb-4 dark:bg-gray-700">
+          <div className="w-full h-5 mb-4 bg-gray-200 rounded-full dark:bg-gray-700">
             <div className={`bg-green-600 h-5 rounded-full dark:bg-green-500 w-[${percentages.tourPercentage}%]`}></div>
           </div>
         </div>
@@ -308,7 +308,7 @@ const Dashboard = () => {
               {percentages.roomPercentage}%
             </div>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-5 mb-4 dark:bg-gray-700 ">
+          <div className="w-full h-5 mb-4 bg-gray-200 rounded-full dark:bg-gray-700 ">
             <div className={`bg-yellow-400 h-5 rounded-full w-[${percentages.roomPercentage}%]`}></div>
           </div>
 
@@ -320,7 +320,7 @@ const Dashboard = () => {
               {percentages.transportPercentage}%
             </div>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-5 mb-4 dark:bg-gray-700">
+          <div className="w-full h-5 mb-4 bg-gray-200 rounded-full dark:bg-gray-700">
             <div className={`bg-indigo-600 h-5 rounded-full dark:bg-indigo-500 w-[${percentages.transportPercentage}%]`}></div>
           </div>
           <div className="flex justify-between">
@@ -331,7 +331,7 @@ const Dashboard = () => {
               {percentages.totalUsersPercentage}%
             </div>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-5 mb-4 dark:bg-gray-700">
+          <div className="w-full h-5 mb-4 bg-gray-200 rounded-full dark:bg-gray-700">
             <div className={`bg-red-600 h-5 rounded-full dark:bg-red-500 w-[${percentages.totalUsersPercentage}%]`}></div>
           </div>
 
@@ -343,41 +343,41 @@ const Dashboard = () => {
               {percentages.totalReviewsPercentage}%
             </div>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-5 mb-4 dark:bg-gray-700">
+          <div className="w-full h-5 mb-4 bg-gray-200 rounded-full dark:bg-gray-700">
             <div className={`bg-green-600 h-5 rounded-full dark:bg-green-500 w-[${percentages.totalReviewsPercentage}%]`}></div>
           </div>
         </div>
       </div> */}
-      <h1 className="text-yellows text-lg lg:text-4xl font-joining bg-light-black bg-opacity-60 p-4 rounded-lg shadow-lg shadow-yellows">
+      <h1 className="p-4 text-lg rounded-lg shadow-lg text-yellows lg:text-4xl font-joining bg-light-black bg-opacity-60 shadow-yellows">
         Active Users
       </h1>
       {/* table */}
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg ml-0 2xl:ml-2 w-full">
-        <table className="w-full text-sm text-left rtl:text-right text-white">
-          <thead className="text-xs text-black uppercase bg-yellows  ">
+      <div className="relative w-full ml-0 overflow-x-auto shadow-md sm:rounded-lg 2xl:ml-2">
+        <table className="w-full text-sm text-left text-white rtl:text-right">
+          <thead className="text-xs text-black uppercase bg-yellows ">
             <tr>
-              <th scope="col" className="px-2 2xl:px-6 py-3 font-radios">
+              <th scope="col" className="px-2 py-3 2xl:px-6 font-radios">
                 UserName
               </th>
-              <th scope="col" className="px-2 2xl:px-6 py-3 font-radios">
+              <th scope="col" className="px-2 py-3 2xl:px-6 font-radios">
                 Email
               </th>
-              <th scope="col" className="px-2 2xl:px-6 py-3 font-radios">
+              <th scope="col" className="px-2 py-3 2xl:px-6 font-radios">
                 Address
               </th>
-              <th scope="col" className="px-2 2xl:px-6 py-3 font-radios">
+              <th scope="col" className="px-2 py-3 2xl:px-6 font-radios">
                 Phone
               </th>
-              <th scope="col" className="px-2 2xl:px-6 py-3 font-radios">
+              <th scope="col" className="px-2 py-3 2xl:px-6 font-radios">
                 To-Booked
               </th>
-              <th scope="col" className="px-2 2xl:px-6 py-3 font-radios">
+              <th scope="col" className="px-2 py-3 2xl:px-6 font-radios">
                 Tr-Booked
               </th>
-              <th scope="col" className="px-2 2xl:px-6 py-3 font-radios">
+              <th scope="col" className="px-2 py-3 2xl:px-6 font-radios">
                 Ho-Booked
               </th>
-              {/* <th scope="col" className="px-2 2xl:px-6 py-3 font-radios">
+              {/* <th scope="col" className="px-2 py-3 2xl:px-6 font-radios">
                 Action
               </th> */}
             </tr>
@@ -390,29 +390,29 @@ const Dashboard = () => {
                   index % 2 === 0 ? "even:bg-light-black" : "odd:bg-fade-black"
                 } border-b dark:border-gray-700 font-radios`}
               >
-                <td className="text-xs px-2 2xl:px-6 py-4 font-medium whitespace-nowrap text-white font-radios">
-                  <div className="flex gap-x-2 items-center">
+                <td className="px-2 py-4 text-xs font-medium text-white 2xl:px-6 whitespace-nowrap font-radios">
+                  <div className="flex items-center gap-x-2">
                     <img
                       src={image}
                       alt="User Avatar"
-                      className="w-8 h-8 hidden xl:flex"
+                      className="hidden w-8 h-8 xl:flex"
                     />
                     <p className="text-white">{user.userName}</p>
                   </div>
                 </td>
-                <td className="text-xs px-2 2xl:px-6 py-4">{user.email}</td>
-                <td className="text-xs px-2 2xl:px-6 py-4">{`${user.address}, ${user.city}`}</td>
-                <td className="text-xs px-2 2xl:px-6 py-4">{user.phone}</td>
-                <td className="text-xs px-2 2xl:px-6 py-4">
+                <td className="px-2 py-4 text-xs 2xl:px-6">{user.email}</td>
+                <td className="px-2 py-4 text-xs 2xl:px-6">{`${user.address}, ${user.city}`}</td>
+                <td className="px-2 py-4 text-xs 2xl:px-6">{user.phone}</td>
+                <td className="px-2 py-4 text-xs 2xl:px-6">
                   {user.bookedTour.length}
                 </td>
-                <td className="text-xs px-2 2xl:px-6 py-4">
+                <td className="px-2 py-4 text-xs 2xl:px-6">
                   {user.bookedTransport.length}
                 </td>
-                <td className="text-xs px-2 2xl:px-6 py-4">
+                <td className="px-2 py-4 text-xs 2xl:px-6">
                   {user.bookedHotels.length}
                 </td>
-                {/* <td className="text-xs px-2 2xl:px-6 py-4">
+                {/* <td className="px-2 py-4 text-xs 2xl:px-6">
                 <a
                   href="#"
                   className="font-medium text-red-600 hover:underline"

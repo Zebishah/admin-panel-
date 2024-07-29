@@ -7,11 +7,14 @@ const AllHotel = () => {
   useEffect(() => {
     const fetchHotels = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/Admin/hotels", {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await axios.get(
+          "https://epic-explorer-backend.vercel.app/Admin/hotels",
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
         setHotels(response.data.hotels);
       } catch (error) {
         console.error("Error fetching hotels:", error);

@@ -8,7 +8,7 @@ const PaymentRecord = () => {
     const fetchRoomPayments = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/Admin/RoomPayments",
+          "https://epic-explorer-backend.vercel.app/Admin/RoomPayments",
           // If you need to send any data in the request body, add it here
           // Example: { someData: 'value' }
           {

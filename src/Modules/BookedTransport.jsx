@@ -8,7 +8,7 @@ const BookedTransport = () => {
     const fetchBookings = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/Admin/TransportBookings",
+          "https://epic-explorer-backend.vercel.app/Admin/TransportBookings",
           {
             headers: {
               "Content-Type": "application/json",

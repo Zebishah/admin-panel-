@@ -8,7 +8,7 @@ const Notifications = () => {
     const fetchNotifications = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/Admin/notifications",
+          "https://epic-explorer-backend.vercel.app/Admin/notifications",
           {
             headers: {
               "Content-Type": "application/json",
@@ -26,7 +26,9 @@ const Notifications = () => {
 
   const handleClearNotifications = async () => {
     try {
-      await axios.delete("http://localhost:5000/Admin/notifications/delete");
+      await axios.delete(
+        "https://epic-explorer-backend.vercel.app/Admin/notifications/delete"
+      );
       setNotifications([]);
     } catch (error) {
       console.error("Error clearing notifications:", error);
@@ -36,7 +38,7 @@ const Notifications = () => {
   // const [notification, setNotifications] = useState([]);
   // useEffect(() => {
   //   dispatch(userNotifications());
-  //   const socket = io("http://localhost:5000");
+  //   const socket = io("https://epic-explorer-backend.vercel.app");
   //   console.log("Attempting to connect to server...");
 
   //   socket.on("connect", () => {

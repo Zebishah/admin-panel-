@@ -8,7 +8,7 @@ const Messages = () => {
     const fetchMessages = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/Admin/messages",
+          "https://epic-explorer-backend.vercel.app/Admin/messages",
           {
             headers: {
               "Content-Type": "application/json",

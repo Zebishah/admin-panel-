@@ -42,7 +42,7 @@ const AddRoom = () => {
     // Handle form submission, e.g., send formData to the server
     try {
       const response = await axios.post(
-        `http://localhost:5000/Room/addRoom`,
+        `https://epic-explorer-backend.vercel.app/Room/addRoom`,
         {
           hotelId: formData.HotelId,
           name: formData.name,

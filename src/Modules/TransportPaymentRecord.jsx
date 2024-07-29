@@ -8,7 +8,7 @@ const PaymentRecord = () => {
     const fetchTransportPayments = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/Admin/TransportPayments",
+          "https://epic-explorer-backend.vercel.app/Admin/TransportPayments",
           // If you need to send any data in the request body, add it here
           // Example: { someData: 'value' }
           {

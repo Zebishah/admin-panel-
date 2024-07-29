@@ -8,7 +8,7 @@ const AllTransport = () => {
     const fetchTransports = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/Admin/transports",
+          "https://epic-explorer-backend.vercel.app/Admin/transports",
           {
             headers: {
               "Content-Type": "application/json",

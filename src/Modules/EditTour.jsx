@@ -41,7 +41,7 @@ const EditTour = () => {
     // Handle form submission, e.g., send formData to the server
     try {
       const response = await axios.post(
-        `http://localhost:5000/Tour/updateTour`,
+        `https://epic-explorer-backend.vercel.app/Tour/updateTour`,
         {
           id: formData.id,
           name: formData.name,
@@ -78,7 +78,7 @@ const EditTour = () => {
   };
 
   return (
-    <section className="bg-white dark:bg-fade-black w-full">
+    <section className="w-full bg-white dark:bg-fade-black">
       <div className="max-w-2xl px-4 py-8 mx-auto lg:py-16">
         <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">
           Update product

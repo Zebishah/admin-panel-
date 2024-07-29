@@ -8,7 +8,7 @@ const Reviews = () => {
     const fetchReviews = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/Admin/reviews",
+          "https://epic-explorer-backend.vercel.app/Admin/reviews",
           {
             headers: {
               "Content-Type": "application/json",
