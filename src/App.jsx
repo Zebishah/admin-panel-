@@ -95,7 +95,7 @@ function App() {
                   element={<TransportPaymentRecord />}
                 />
                 <Route path="/AddTour" element={<AddTour />} />
-                <Route path="/Dashboard" element={<Dashboard />} />
+                <Route path="/" element={<Dashboard />} />
                 <Route path="/CatalogOptions" element={<CatalogOptions />} />
               </Routes>
             </div>
